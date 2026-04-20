@@ -2,7 +2,13 @@
 Follow the `Instructions` to implement the `Plan` then `Report` the completed work.
 
 ## Instructions
-- Read the plan, think hard about the plan and implement the plan.
+- Read the plan. The plan provides the tasks. Each task has an implementation and a test.
+- Execute tasks in order (they are ordered simplest to most complex).
+- For each task:
+  1. Implement the change
+  2. Run the task's test to verify it works
+  3. Do not move to the next task until the current one passes
+- If a task fails its test, fix it before moving on. Never skip ahead.
 
 ## Plan
 $ARGUMENTS

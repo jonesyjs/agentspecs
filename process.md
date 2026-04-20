@@ -33,9 +33,12 @@ Work from outside in.
 
 ## 4. Code
 
-- Implement in lockstep with testing.
-- Follow the same simplest-to-most-complex progression.
-- Start with core logic, build outward.
+- Take the use cases you defined in Step 3, ordered simplest to most complex. That order is your implementation order.
+- Start with the innermost, simplest use case. Write the minimal code to make it work. Test it before moving on.
+- Then take the next use case. Add only the code needed to handle it. Test it.
+- Repeat until all use cases are covered, building outward from core logic to boundary handling.
+- Never implement the complex case first and work backwards. Never implement everything at once and test at the end.
+- Each iteration should leave the code in a working, tested state.
 
 ## 5. Test
 

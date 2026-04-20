@@ -1,6 +1,6 @@
 # Feature Planning
 
-Create a new plan to implement the `Feature` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan and use the `Relevant Files` to focus on the right files.
+Create a new plan to implement the `Feature` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan use the `Relevant Files` to focus on the right files.
 
 ## Variables
 issue_number: $1
@@ -14,7 +14,7 @@ issue_json: $3
 - Create the plan in the `specs/` directory with filename: `issue-{issue_number}-adw-{adw_id}-sdlc_planner-{descriptive-name}.md`
   - Replace `{descriptive-name}` with a short, descriptive name based on the feature (e.g., "add-auth-system", "implement-search", "create-dashboard")
 - Use the `Plan Format` below to create the plan.
-- Research the codebase to understand existing patterns, architecture, and conventions before planning the feature. Start by reading the `README.md` file, then canvas outward from the area of change to understand the surrounding context, related files, and broader architecture. Work inward to the specific area where the feature will live. By the time you write the plan, you should have full context — not just the code, but the why.
+- Research the codebase to understand existing patterns, architecture, and conventions before planning the feature.
 - IMPORTANT: Replace every <placeholder> in the `Plan Format` with the requested value. Add as much detail as needed to implement the feature successfully.
 - Use your reasoning model: THINK HARD about the feature requirements, design, and implementation approach.
 - Follow existing patterns and conventions in the codebase. Don't reinvent the wheel.
@@ -27,6 +27,7 @@ issue_json: $3
   - IMPORTANT: When you fill out the `Plan Format: Relevant Files` section, add an instruction to read `.claude/commands/test_e2e.md`, and `.claude/commands/e2e/test_basic_query.md` to understand how to create an E2E test file. List your new E2E test file to the `Plan Format: New Files` section.
   - To be clear, we're not creating a new E2E test file, we're creating a task to create a new E2E test file in the `Plan Format` below
 - Respect requested files in the `Relevant Files` section.
+- Start your research by reading the `README.md` file.
 
 ## Relevant Files
 
@@ -45,7 +46,7 @@ Ignore all other files in the codebase.
 # Feature: <feature name>
 
 ## Feature Description
-<restate the feature requirement in your own words — describe what it does, its purpose, and the value it brings to users. Identify any domain terms and define them clearly.>
+<describe the feature in detail, including its purpose and value to users>
 
 ## User Story
 As a <type of user>
@@ -53,27 +54,27 @@ I want to <action/goal>
 So that <benefit/value>
 
 ## Problem Statement
-<clearly define the specific problem or opportunity this feature addresses. What gap exists today? What can't users do that they need to?>
+<clearly define the specific problem or opportunity this feature addresses>
 
 ## Solution Statement
-<describe the proposed solution approach and how it solves the problem. For each unit of logic, define what it receives as input and what it returns as output.>
+<describe the proposed solution approach and how it solves the problem>
 
 ## Relevant Files
 Use these files to implement the feature:
 
-<find and list the files that are relevant to the feature, describe why they are relevant in bullet points. If there are new files that need to be created to implement the feature, list them in an h3 'New Files' section.>
+<find and list the files that are relevant to the feature describe why they are relevant in bullet points. If there are new files that need to be created to implement the feature, list them in an h3 'New Files' section.>
 
 ## Implementation Plan
 ### Phase 1: Foundation
-<describe the foundational work needed before implementing the main feature — data models, utilities, shared types>
+<describe the foundational work needed before implementing the main feature>
 
 ### Phase 2: Core Implementation
-<describe the main implementation work for the feature — the core logic, starting from the simplest unit and building outward>
+<describe the main implementation work for the feature>
 
 ### Phase 3: Integration
-<describe how the feature will integrate with existing functionality — wiring up routes, UI components, connecting layers>
+<describe how the feature will integrate with existing functionality>
 
-## Step by Step Tasks (simplest to most complex)
+## Step by Step Tasks
 IMPORTANT: Order tasks from the simplest/innermost change to the most complex/outermost. Each task MUST include its own test. The implementor will execute one task, test it, then move to the next. Do not group all tests at the end.
 
 <For each task, use this structure:>
@@ -98,10 +99,7 @@ IMPORTANT: Order tasks from the simplest/innermost change to the most complex/ou
 
 ## Testing Strategy
 ### Unit Tests
-<describe unit tests needed — use Arrange, Act, Assert pattern>
-
-### Integration Tests
-<describe integration tests needed — treat the service layer as a black box, mock external boundaries>
+<describe unit tests needed for the feature>
 
 ### Edge Cases
 <list edge cases that need to be tested>

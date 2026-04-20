@@ -1,6 +1,6 @@
 # Bug Planning
 
-Create a new plan to resolve the `Bug` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan and use the `Relevant Files` to focus on the right files.
+Create a new plan to resolve the `Bug` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan use the `Relevant Files` to focus on the right files.
 
 ## Variables
 issue_number: $1
@@ -14,8 +14,8 @@ issue_json: $3
 - You're writing a plan to resolve a bug, it should be thorough and precise so we fix the root cause and prevent regressions.
 - Create the plan in the `specs/` directory with filename: `issue-{issue_number}-adw-{adw_id}-sdlc_planner-{descriptive-name}.md`
   - Replace `{descriptive-name}` with a short, descriptive name based on the bug (e.g., "fix-login-error", "resolve-timeout", "patch-memory-leak")
-- Use the `Plan Format` below to create the plan.
-- Research the codebase to understand the bug, reproduce it, and put together a plan to fix it. Start by reading the `README.md` file, then canvas outward — establish the perimeter of the affected system, identify its inputs and outputs, understand the surrounding context and related files. Work inward to the specific area where the bug lives. By the time you write the plan, you should have full context — not just the code, but the why.
+- Use the plan format below to create the plan.
+- Research the codebase to understand the bug, reproduce it, and put together a plan to fix it.
 - IMPORTANT: Replace every <placeholder> in the `Plan Format` with the requested value. Add as much detail as needed to fix the bug.
 - Use your reasoning model: THINK HARD about the bug, its root cause, and the steps to fix it properly.
 - IMPORTANT: Be surgical with your bug fix, solve the bug at hand and don't fall off track.
@@ -28,6 +28,7 @@ issue_json: $3
   - IMPORTANT: When you fill out the `Plan Format: Relevant Files` section, add an instruction to read `.claude/commands/test_e2e.md`, and `.claude/commands/e2e/test_basic_query.md` to understand how to create an E2E test file. List your new E2E test file to the `Plan Format: New Files` section.
   - To be clear, we're not creating a new E2E test file, we're creating a task to create a new E2E test file in the `Plan Format` below
 - Respect requested files in the `Relevant Files` section.
+- Start your research by reading the `README.md` file.
 
 ## Relevant Files
 
@@ -45,24 +46,24 @@ Ignore all other files in the codebase.
 # Bug: <bug name>
 
 ## Bug Description
-<restate the bug in your own words — describe the symptoms, expected vs actual behavior, and any domain terms involved. Identify gaps in your understanding early.>
+<describe the bug in detail, including symptoms and expected vs actual behavior>
 
 ## Problem Statement
-<clearly define the specific problem that needs to be solved. What is broken? What is the impact?>
+<clearly define the specific problem that needs to be solved>
 
 ## Solution Statement
-<describe the proposed fix approach. For each unit of logic affected, define what it receives as input, what it should return as output, and where the current behavior diverges.>
+<describe the proposed solution approach to fix the bug>
 
 ## Steps to Reproduce
 <list exact steps to reproduce the bug>
 
 ## Root Cause Analysis
-<analyze and explain the root cause of the bug. Trace the issue from its symptoms back to the specific code path that causes the failure.>
+<analyze and explain the root cause of the bug>
 
 ## Relevant Files
 Use these files to fix the bug:
 
-<find and list the files that are relevant to the bug, describe why they are relevant in bullet points. If there are new files that need to be created to fix the bug, list them in an h3 'New Files' section.>
+<find and list the files that are relevant to the bug describe why they are relevant in bullet points. If there are new files that need to be created to fix the bug, list them in an h3 'New Files' section.>
 
 ## Step by Step Tasks (simplest to most complex)
 IMPORTANT: Order tasks from the simplest/innermost change to the most complex/outermost. Each task MUST include its own test. The implementor will execute one task, test it, then move to the next. Do not group all tests at the end.

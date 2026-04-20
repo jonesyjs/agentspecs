@@ -1,6 +1,6 @@
 # Chore Planning
 
-Create a new plan to resolve the `Chore` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan and use the `Relevant Files` to focus on the right files. Follow the `Report` section to properly report the results of your work.
+Create a new plan to resolve the `Chore` using the exact specified markdown `Plan Format`. Follow the `Instructions` to create the plan use the `Relevant Files` to focus on the right files. Follow the `Report` section to properly report the results of your work.
 
 ## Variables
 issue_number: $1
@@ -14,11 +14,12 @@ issue_json: $3
 - You're writing a plan to resolve a chore, it should be simple but we need to be thorough and precise so we don't miss anything or waste time with any second round of changes.
 - Create the plan in the `specs/` directory with filename: `issue-{issue_number}-adw-{adw_id}-sdlc_planner-{descriptive-name}.md`
   - Replace `{descriptive-name}` with a short, descriptive name based on the chore (e.g., "update-readme", "fix-tests", "refactor-auth")
-- Use the `Plan Format` below to create the plan.
-- Research the codebase to understand what the chore involves. Start by reading the `README.md` file, then canvas the affected area — identify what files and systems the chore touches, understand the surrounding context. Work inward to the specific changes needed. By the time you write the plan, you should understand the scope and any ripple effects.
+- Use the plan format below to create the plan.
+- Research the codebase and put together a plan to accomplish the chore.
 - IMPORTANT: Replace every <placeholder> in the `Plan Format` with the requested value. Add as much detail as needed to accomplish the chore.
 - Use your reasoning model: THINK HARD about the plan and the steps to accomplish the chore.
 - Respect requested files in the `Relevant Files` section.
+- Start your research by reading the `README.md` file.
 - `adws/*.py` contain astral uv single file python scripts. So if you want to run them use `uv run <script_name>`.
 - When you finish creating the plan for the chore, follow the `Report` section to properly report the results of your work.
 
@@ -38,12 +39,12 @@ Ignore all other files in the codebase.
 # Chore: <chore name>
 
 ## Chore Description
-<restate the chore in your own words — describe what needs to be done, why it matters, and any domain terms involved. Identify anything unclear early.>
+<describe the chore in detail>
 
 ## Relevant Files
 Use these files to resolve the chore:
 
-<find and list the files that are relevant to the chore, describe why they are relevant in bullet points. If there are new files that need to be created to accomplish the chore, list them in an h3 'New Files' section.>
+<find and list the files that are relevant to the chore describe why they are relevant in bullet points. If there are new files that need to be created to accomplish the chore, list them in an h3 'New Files' section.>
 
 ## Step by Step Tasks (simplest to most complex)
 IMPORTANT: Order tasks from the simplest/innermost change to the most complex/outermost. Each task MUST include its own test. The implementor will execute one task, test it, then move to the next. Do not group all tests at the end.
